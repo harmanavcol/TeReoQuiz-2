@@ -4,13 +4,13 @@ namespace MaoriQuiz
 {
     class Program
     {
-        static void correctanseasy()
+        static void correctans()
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\nCongrats, that is correct!");
             Console.ResetColor();
         }
-        static void wronganseasy()
+        static void wrongans()
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("\nSorry, that is incorrect.");
@@ -42,7 +42,7 @@ namespace MaoriQuiz
                 char ans1 = Convert.ToChar(Console.ReadLine().ToUpper());
                 if (ans1 == 'C')
                 {
-                    correctanseasy();
+                    correctans();
                     score = score + 1;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
@@ -50,7 +50,7 @@ namespace MaoriQuiz
                 }
                 else
                 {
-                    wronganseasy();
+                    wrongans();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
@@ -60,7 +60,7 @@ namespace MaoriQuiz
                 char ans2 = Convert.ToChar(Console.ReadLine().ToUpper());
                 if (ans2 == 'A')
                 {
-                    correctanseasy();
+                    correctans();
                     score = score + 1;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
@@ -68,7 +68,7 @@ namespace MaoriQuiz
                 }
                 else
                 {
-                    wronganseasy();
+                    wrongans();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
@@ -78,7 +78,7 @@ namespace MaoriQuiz
                 char ans3 = Convert.ToChar(Console.ReadLine().ToUpper());
                 if (ans3 == 'A')
                 {
-                    correctanseasy();
+                    correctans();
                     score = score + 2;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
@@ -86,7 +86,7 @@ namespace MaoriQuiz
                 }
                 else
                 {
-                    wronganseasy();
+                    wrongans();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
@@ -95,14 +95,14 @@ namespace MaoriQuiz
                 char ans4 = Convert.ToChar(Console.ReadLine().ToUpper());
                 if (ans4 == 'C')
                 {
-                    wronganseasy();
+                    wrongans();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
                 }
                 else
                 {
-                    correctanseasy();
+                    correctans();
                     score = score + 2;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
@@ -112,14 +112,14 @@ namespace MaoriQuiz
                 char ans5 = Convert.ToChar(Console.ReadLine().ToUpper());
                 if (ans5 == 'C')
                 {
-                    correctanseasy();
+                    correctans();
                     score = score + 3;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
                 } else
                 {
-                    wronganseasy();
+                    wrongans();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
@@ -128,14 +128,14 @@ namespace MaoriQuiz
                 char ans6 = Convert.ToChar(Console.ReadLine().ToUpper());
                 if (ans6 == 'B')
                 {
-                    correctanseasy();
+                    correctans();
                     score = score + 3;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
                 } else
                 {
-                    wronganseasy();
+                    wrongans();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
@@ -144,30 +144,31 @@ namespace MaoriQuiz
                 char ans7 = Convert.ToChar(Console.ReadLine().ToUpper());
                 if (ans7 == 'A')
                 {
-                    correctanseasy();
+                    correctans();
                     score = score + 4;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
                 } else
                 {
-                    wronganseasy();
+                    wrongans();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
                 }
-                Console.WriteLine("\nFINAL QUESTION: \n\n.. \n\nA) ... \nB) ... \nC)");
+                // Trick question:
+                Console.WriteLine("\nFINAL QUESTION: \n\nHello to one is to tena koutou katoa as hello to everyone is to... \n\nA) Tena korua \nB) Tena koe \nC) Nau mai, haere mai");
                 char ans8 = Convert.ToChar(Console.ReadLine().ToUpper());
                 if (ans8 == 'B')
                 {
-                    correctanseasy();
+                    correctans();
                     score = score + 4;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
                 } else
                 {
-                    wronganseasy();
+                    wrongans();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
@@ -203,7 +204,42 @@ namespace MaoriQuiz
             }
             static void hard()
             {
-
+                int score = 0;
+                Console.WriteLine("\nQUESTION 1: \n\nA) ... \nB) ... \nC) ...");
+                char ans1 = Convert.ToChar(Console.ReadLine().ToUpper());
+                if (ans1 == 'B')
+                {
+                    correctans();
+                    score = score + 5;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nYou have a total of " + score + " points.");
+                    Console.ResetColor();
+                } else
+                {
+                    wrongans();
+                    score = score - 5;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nYou have a total of " + score + " points.");
+                    Console.ResetColor();
+                }
+                Console.WriteLine("\nQUESTION 2: \n\nA) ... \nB) ... \nC) ...");
+                char ans2 = Convert.ToChar(Console.ReadLine().ToUpper());
+                if (ans2 == 'A')
+                {
+                    correctans();
+                    score = score + 5;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nYou have a total of " + score + " points.");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    wrongans();
+                    score = score - 5;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nYou have a total of " + score + " points.");
+                    Console.ResetColor();
+                }
             }
         }
     }
