@@ -43,7 +43,7 @@ namespace MaoriQuiz
                 if (ans1 == 'C')
                 {
                     correctans();
-                    score = score + 1;
+                    score++;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
@@ -61,7 +61,7 @@ namespace MaoriQuiz
                 if (ans2 == 'A')
                 {
                     correctans();
-                    score = score + 1;
+                    score++;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
@@ -79,7 +79,7 @@ namespace MaoriQuiz
                 if (ans3 == 'A')
                 {
                     correctans();
-                    score = score + 2;
+                    score++;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
@@ -103,7 +103,7 @@ namespace MaoriQuiz
                 else
                 {
                     correctans();
-                    score = score + 2;
+                    score++;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
@@ -113,7 +113,7 @@ namespace MaoriQuiz
                 if (ans5 == 'C')
                 {
                     correctans();
-                    score = score + 3;
+                    score++;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
@@ -129,7 +129,7 @@ namespace MaoriQuiz
                 if (ans6 == 'B')
                 {
                     correctans();
-                    score = score + 3;
+                    score++;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
@@ -145,7 +145,7 @@ namespace MaoriQuiz
                 if (ans7 == 'A')
                 {
                     correctans();
-                    score = score + 4;
+                    score++;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
@@ -162,7 +162,7 @@ namespace MaoriQuiz
                 if (ans8 == 'B')
                 {
                     correctans();
-                    score = score + 4;
+                    score++;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
