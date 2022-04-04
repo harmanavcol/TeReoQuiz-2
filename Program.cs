@@ -173,7 +173,7 @@ namespace MaoriQuiz
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
                 }
-                if (score <= 11)
+                if (score <= 3)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("\nSorry, your score of " + score + " does not qualify as a passing score. Do you wish to have another go at this quiz? \nIf so, please type Y and press ENTER. If not, please type N and press ENTER to exit.");
