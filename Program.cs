@@ -140,7 +140,7 @@ namespace MaoriQuiz
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
                 }
-                Console.WriteLine("\nQUESTION 7: \n\nGood job is to ka pai as good work is to... \n\nA) Mahi pahi \nB) Tino pai \nC) Ka rawe");
+                Console.WriteLine("\nQUESTION 7: \n\nWhat day is rapare? \n\nA) Thursday \nB) Friday \nC) Saturday");
                 char ans7 = Convert.ToChar(Console.ReadLine().ToUpper());
                 if (ans7 == 'A')
                 {
@@ -157,7 +157,7 @@ namespace MaoriQuiz
                     Console.ResetColor();
                 }
                 // Trick question:
-                Console.WriteLine("\nFINAL QUESTION: \n\nHello to one is to tena koutou katoa as hello to everyone is to... \n\nA) Tena korua \nB) Tena koe \nC) Nau mai, haere mai");
+                Console.WriteLine("\nFINAL QUESTION: \n\nWhat day follows rapare? \n\nA) Mane \nB) Paraire \nC) Ratapu");
                 char ans8 = Convert.ToChar(Console.ReadLine().ToUpper());
                 if (ans8 == 'B')
                 {
