@@ -156,7 +156,6 @@ namespace MaoriQuiz
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
                 }
-                // Trick question:
                 Console.WriteLine("\nFINAL QUESTION: \n\nWhat day follows rapare? \n\nA) Mane \nB) Paraire \nC) Ratapu");
                 char ans8 = Convert.ToChar(Console.ReadLine().ToUpper());
                 if (ans8 == 'B')
@@ -205,29 +204,29 @@ namespace MaoriQuiz
             static void hard()
             {
                 int score = 0;
-                Console.WriteLine("\nQUESTION 1: \n\nA) ... \nB) ... \nC) ...");
+                Console.WriteLine("\nQUESTION 1: If you wished to congradulate someone, you would say... \n\nA) Mahi tahi \nB) Nga mihi \nC) Tino pai");
                 char ans1 = Convert.ToChar(Console.ReadLine().ToUpper());
                 if (ans1 == 'B')
                 {
                     correctans();
-                    score = score + 5;
+                    score = score + 2;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
                 } else
                 {
                     wrongans();
-                    score = score - 5;
+                    score = score - 2;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
                 }
-                Console.WriteLine("\nQUESTION 2: \n\nA) ... \nB) ... \nC) ...");
+                Console.WriteLine("\nQUESTION 2: If you used the greeting tena koe, how many people would you be referring to? \n\nA) One person \nB) Two people \nC) More than three people.");
                 char ans2 = Convert.ToChar(Console.ReadLine().ToUpper());
                 if (ans2 == 'A')
                 {
                     correctans();
-                    score = score + 5;
+                    score = score + 2;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
@@ -235,9 +234,135 @@ namespace MaoriQuiz
                 else
                 {
                     wrongans();
-                    score = score - 5;
+                    score = score - 2;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
+                    Console.ResetColor();
+                }
+                Console.WriteLine("\nNQUESTION 3: If yesterday was stormy, what word would you use to describe the weather? \n\nA) Wera \nB) Makarir \nC) Marangai");
+                char ans3 = Convert.ToChar(Console.ReadLine().ToUpper());
+                if (ans3 == 'C')
+                {
+                    correctans();
+                    score = score + 2;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nYou have a total of " + score + " points.");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    wrongans();
+                    score = score - 2;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nYou have a total of " + score + " points.");
+                    Console.ResetColor();
+                }
+                Console.WriteLine("\nQUESTION 4: If I said it was ua outside what would the weather be like? \n\nA) Snowy \nB) Rainy \nC) Hot");
+                char ans4 = Convert.ToChar(Console.ReadLine().ToUpper());
+                if (ans4 == 'B')
+                {
+                    correctans();
+                    score = score + 2;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nYou have a total of " + score + " points.");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    wrongans();
+                    score = score - 2;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nYou have a total of " + score + " points.");
+                    Console.ResetColor();
+                }
+                Console.WriteLine("\nQUESTION 5: What is the Maori word for bus? \n\nA) Pahi \nB) Mahi \nC) Paki");
+                char ans5 = Convert.ToChar(Console.ReadLine().ToUpper());
+                if (ans5 == 'A')
+                {
+                    correctans();
+                    score = score + 2;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nYou have a total of " + score + " points.");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    wrongans();
+                    score = score - 2;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nYou have a total of " + score + " points.");
+                    Console.ResetColor();
+                }
+                Console.WriteLine("\nQUESTION 6: If I said I came home via tereina, what did I come home in? \n\nA) Train \nB) Bus \nC) Car");
+                char ans6 = Convert.ToChar(Console.ReadLine().ToUpper());
+                if (ans6 == 'A')
+                {
+                    correctans();
+                    score = score + 2;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nYou have a total of " + score + " points.");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    wrongans();
+                    score = score - 2;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nYou have a total of " + score + " points.");
+                    Console.ResetColor();
+                }
+                Console.WriteLine("\nQUESTION 7: Which is the correct Maori translation of the sentence: \nHello everyone to Avondale College. \n\nA) Kia ora koutou katoa o Avondale College. \nB) Kia ora ki tetahi o te Kareti o Avondale. \nC) Kia ora ki te tokorua kei Avondale College");
+                char ans7 = Convert.ToChar(Console.ReadLine().ToUpper());
+                if (ans7 == 'A')
+                {
+                    correctans();
+                    score = score + 2;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nYou have a total of " + score + " points.");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    wrongans();
+                    score = score - 2;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nYou have a total of " + score + " points.");
+                    Console.ResetColor();
+                }
+                Console.WriteLine("\nFINAL QUESTION: Complete the sentence: I oma ia i te tere o te... \n(He ran at the speed of light) \n\nA) Mama \nB) Mana \nC) Marama");
+                char ans8 = Convert.ToChar(Console.ReadLine().ToUpper());
+                if (ans8 == 'C')
+                {
+                    correctans();
+                    score = score + 2;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nYou have a total of " + score + " points.");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    wrongans();
+                    score = score - 2;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nYou have a total of " + score + " points.");
+                    Console.ResetColor();
+                }
+                if (score <= 9)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\nSorry, your score of " + score + " does not qualify as a passing score. Do you wish to try an easier set of questions? \nIf so, please type Y and press ENTER. If not, please type N and press ENTER to exit.");
+                    Console.ResetColor();
+                    char choice2 = Convert.ToChar(Console.ReadLine().ToUpper());
+                    Console.Clear();
+                    while (choice2 == 'Y')
+                    {
+                        easy();
+                    }
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("\nCongratulations! You have passed Harman Singh's multiple choice Te Reo Maori quiz with a score of " + score + "!\nPlease press ENTER to leave.");
                     Console.ResetColor();
                 }
             }
