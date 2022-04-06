@@ -1,4 +1,20 @@
 ﻿/* This program is a Te Reo Maori quiz written by Harman Singh.
+
+Start
+Ask user if they are a beginner
+If they enter Y, or an invalid input, go to the easy method
+If they enter N, go to the hard method
+After finishing the easy set of questions, check whether the user's score is less than or equal to 3
+IF so, ask user if they want to try the easy questions again or end the program
+WHILE they enter Y, go back to the start of the easy method
+ELSE, if the user's score is equal to or more than 4, ask user if they want to try hard questions or end the program
+WHILE they enter Y, go to the hard method
+After finishing the hard set of questions, check whether the user's score is less than or equal to 9
+IF so, ask user if they want to try the easy questions of end the program
+WHILE they enter Y, go back to the easy method
+ELSE, if the user's score is equal to or more than 10, congradulate the user and end the program
+End
+
 */
 using System;
 
@@ -21,9 +37,9 @@ namespace MaoriQuiz
         static void Main(string[] args)
         {
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Yellow; // Changes text colour.
             Console.WriteLine("Hello and welcome to Harman Singh's multiple choice Te Reo Maori quiz! \nWhen asked a question, you must type A, B or C and then press ENTER. \n\nAre you a beginner to Maori? if so, type Y and press ENTER. If not, type N and press ENTER.");
-            Console.ResetColor();
+            Console.ResetColor(); // Resets the text colour to white.
             char choice = Convert.ToChar(Console.ReadLine().ToUpper());
             Console.Clear();
 
@@ -45,7 +61,7 @@ namespace MaoriQuiz
                 if (ans1 == 'C')
                 {
                     correctAns();
-                    score++;
+                    score++; // Add 1 to score.
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
@@ -211,14 +227,14 @@ namespace MaoriQuiz
                 if (ans1 == 'B')
                 {
                     correctAns();
-                    score = score + 2;
+                    score = score + 2; // Add 2 to score.
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
                 } else
                 {
                     wrongAns();
-                    score = score - 2;
+                    score = score - 2; // Take away 2 from score.
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("\nYou have a total of " + score + " points.");
                     Console.ResetColor();
@@ -356,9 +372,9 @@ namespace MaoriQuiz
                     Console.ResetColor();
                     char choice2 = Convert.ToChar(Console.ReadLine().ToUpper());
                     Console.Clear();
-                    while (choice2 == 'Y') // Goes to easy set of questions.
+                    while (choice2 == 'Y')
                     {
-                        easy();
+                        easy(); // Goes to easy set of questions.
                     }
                 }
                 else
