@@ -2,7 +2,7 @@
 
 Start
 Ask user if they are a beginner
-If they enter Y, or an invalid input, go to the easy method
+If they enter Y, go to the easy method
 If they enter N, go to the hard method
 After finishing the easy set of questions, check whether the user's score is less than or equal to 3
 IF so, ask user if they want to try the easy questions again or end the program
@@ -12,7 +12,7 @@ WHILE they enter Y, go to the hard method
 After finishing the hard set of questions, check whether the user's score is less than or equal to 9
 IF so, ask user if they want to try the easy questions of end the program
 WHILE they enter Y, go back to the easy method
-ELSE, if the user's score is equal to or more than 10, congradulate the user and end the program
+ELSE, if the user's score is equal to or more than 10, congratulate the user and end the program
 End
 
 */
@@ -34,161 +34,331 @@ namespace MaoriQuiz
             Console.WriteLine("\nSorry, that is incorrect.");
             Console.ResetColor();
         }
+        static void invalidAns()
+        {
+            Console.ForegroundColor= ConsoleColor.Yellow;
+            Console.WriteLine("\nSorry, that is not a valid input. Please type A, B or C and then press ENTER");
+            Console.ResetColor();
+        }
         static void Main(string[] args)
         {
 
-            Console.ForegroundColor = ConsoleColor.Yellow; // Changes text colour.
-            Console.WriteLine("Hello and welcome to Harman Singh's multiple choice Te Reo Maori quiz! \nWhen asked a question, you must type A, B or C and then press ENTER. \n\nAre you a beginner to Maori? if so, type Y and press ENTER. If not, type N and press ENTER.");
-            Console.ResetColor(); // Resets the text colour to white.
-            char choice = Convert.ToChar(Console.ReadLine().ToUpper());
-            Console.Clear();
-
-            switch(choice)
+            while(true)
             {
-                case 'Y': easy(); // Goes to easy set of questions.
-                    break;
-                case 'N': hard(); // Goes to hard set of questions.
-                    break;
-                default: easy();
-                    break;
-            }
+                Console.ForegroundColor = ConsoleColor.Yellow; // Changes text colour.
+                Console.WriteLine("Hello and welcome to Harman Singh's multiple choice Te Reo Maori quiz! \nWhen asked a question, you must type A, B or C and then press ENTER. \n\nAre you a beginner to Maori? if so, type Y and press ENTER. If not, type N and press ENTER.");
+                Console.ResetColor(); // Resets the text colour to white.
+                string choice = Console.ReadLine().ToUpper();
+
+
+                switch (choice)
+                {
+                    case "Y":
+                            easy(); // Goes to easy set of questions.
+                            break;
+                    case "N":
+                            hard(); // Goes to hard set of questions.
+                            break;
+                    default:
+                           Console.WriteLine("\nSorry, that is an invalid input. Please type either Y or N and then press ENTER\n");
+                           continue;
+                }
+                break;
+            } 
 
             static void easy() // Easy questions.
             {
                 int score = 0;
+                while (true)
+            { 
                 Console.WriteLine("\nQUESTION 1: \n\nWhat is the Maori word for hello? \n\nA) Ka Pai \nB) Kapa haka \nC) Kia ora\n");
-                char ans1 = Convert.ToChar(Console.ReadLine().ToUpper());
-                if (ans1 == 'C')
+                string ans1 = Console.ReadLine().ToUpper();
+
+                
+                switch (ans1)
                 {
-                    correctAns();
-                    score++; // Add 1 to score.
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("\nYou have a total of " + score + " points.");
-                    Console.ResetColor();
+                    case "A":
+                            wrongAns();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                    case "B":
+                            wrongAns();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                    case "C":
+                            correctAns();
+                            score++;
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                    default:
+                           invalidAns();
+                           continue;
                 }
-                else
+                break;
+            }
+
+                while (true)
                 {
-                    wrongAns();
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("\nYou have a total of " + score + " points.");
-                    Console.ResetColor();
+                    Console.WriteLine("\nQUESTION 2: \n\nWhat is the English phrase for Morena? \n\nA) Good morning \nB) Good afternoon \nC) Good evening\n");
+                    string ans2 = Console.ReadLine().ToUpper();
+
+
+                    switch (ans2)
+                    {
+                        case "A":
+                            correctAns();
+                            score++;
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        case "B":
+                            wrongAns();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        case "C":
+                            wrongAns();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        default:
+                               invalidAns();
+                               continue;
+                    }
+                    break;
                 }
 
-                Console.WriteLine("\nQUESTION 2: \n\nWhat is the English phrase for Morena? \n\nA) Good morning \nB) Good afternoon \nC) Good evening\n");
-                char ans2 = Convert.ToChar(Console.ReadLine().ToUpper());
-                if (ans2 == 'A')
+                while (true)
                 {
-                    correctAns();
-                    score++;
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("\nYou have a total of " + score + " points.");
-                    Console.ResetColor();
-                }
-                else
-                {
-                    wrongAns();
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("\nYou have a total of " + score + " points.");
-                    Console.ResetColor();
-                }
+                    Console.WriteLine("\nQUESTION 3: \n\nWhat is the Maori term for performing arts? \n\nA) Kapa haka \nB) Korare \nC) Kaumatua");
+                    string ans3 = Console.ReadLine().ToUpper();
 
-                Console.WriteLine("\nQUESTION 3: \n\nWhat is the Maori term for performing arts? \n\nA) Kapa haka \nB) Korare \nC) Kaumatua");
-                char ans3 = Convert.ToChar(Console.ReadLine().ToUpper());
-                if (ans3 == 'A')
-                {
-                    correctAns();
-                    score++;
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("\nYou have a total of " + score + " points.");
-                    Console.ResetColor();
+
+                    switch (ans3)
+                    {
+                        case "A":
+                            correctAns();
+                            score++;
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        case "B":
+                            wrongAns();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        case "C":
+                            wrongAns();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        default:
+                               invalidAns();
+                               continue;
+                    }
+                    break;
                 }
-                else
+                while (true)
                 {
-                    wrongAns();
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("\nYou have a total of " + score + " points.");
-                    Console.ResetColor();
+                    Console.WriteLine("\nQUESTION 4: \n\nMatariki can be best described as... \n\nA) The Maori term for the Pleiades star cluster \nB) The beginning of the Maori New Year \nC) A celebration akin to Christmas");
+                    string ans4 = Console.ReadLine().ToUpper();
+
+
+                    switch (ans4)
+                    {
+                        case "A":
+                            correctAns();
+                            score++;
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        case "B":
+                            correctAns();
+                            score++;
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        case "C":
+                            wrongAns();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        default:
+                               invalidAns();
+                               continue;
+                    }
+                    break;
                 }
-                Console.WriteLine("\nQUESTION 4: \n\nMatariki can be best described as... \n\nA) The Maori term for the Pleiades star cluster \nB) The beginning of the Maori New Year \nC) A celebration akin to Christmas");
-                char ans4 = Convert.ToChar(Console.ReadLine().ToUpper());
-                if (ans4 == 'C')
+                while (true)
                 {
-                    wrongAns();
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("\nYou have a total of " + score + " points.");
-                    Console.ResetColor();
+                    Console.WriteLine("\nQUESTION 5: \n\nWhat is the Maori term for kanoe? \n\nA) Whaka \nB) Raka \nC) Waka");
+                    string ans5 = Console.ReadLine().ToUpper();
+
+
+                    switch (ans5)
+                    {
+                        case "A":
+                            wrongAns();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        case "B":
+                            wrongAns();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        case "C":
+                            correctAns();
+                            score++;
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        default:
+                               invalidAns();
+                               continue;
+                    }
+                    break;
                 }
-                else
+                while (true)
                 {
-                    correctAns();
-                    score++;
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("\nYou have a total of " + score + " points.");
-                    Console.ResetColor();
+                    Console.WriteLine("\nQUESTION 6: \n\nWhat is the English equivalent of Aoteaora? \n\nA) The Pacific Ocean \nB) New Zealand \nC) Atlantis");
+                    string ans6 = Console.ReadLine().ToUpper();
+
+
+                    switch (ans6)
+                    {
+                        case "A":
+                            wrongAns();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        case "B":
+                            correctAns();
+                            score++;
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        case "C":
+                            wrongAns();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        default:
+                            invalidAns();
+                            continue;
+                    }
+                    break;
                 }
-                Console.WriteLine("\nQUESTION 5: \n\nWhat is the Maori term for kanoe? \n\nA) Whaka \nB) Raka \nC) Waka");
-                char ans5 = Convert.ToChar(Console.ReadLine().ToUpper());
-                if (ans5 == 'C')
+                while (true)
                 {
-                    correctAns();
-                    score++;
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("\nYou have a total of " + score + " points.");
-                    Console.ResetColor();
-                } else
-                {
-                    wrongAns();
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("\nYou have a total of " + score + " points.");
-                    Console.ResetColor();
+                    Console.WriteLine("\nQUESTION 7: \n\nWhat day is rapare? \n\nA) Thursday \nB) Friday \nC) Saturday");
+                    string ans7 = Console.ReadLine().ToUpper();
+
+
+                    switch (ans7)
+                    {
+                        case "A":
+                            correctAns();
+                            score++;
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        case "B":
+                            wrongAns();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        case "C":
+                            wrongAns();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        default:
+                            invalidAns();
+                            continue;
+                    }
+                    break;
                 }
-                Console.WriteLine("\nQUESTION 6: \n\nWhat is the English equivalent of Aoteaora? \n\nA) The Pacific Ocean \nB) New Zealand \nC) Atlantis");
-                char ans6 = Convert.ToChar(Console.ReadLine().ToUpper());
-                if (ans6 == 'B')
+                while (true)
                 {
-                    correctAns();
-                    score++;
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("\nYou have a total of " + score + " points.");
-                    Console.ResetColor();
-                } else
-                {
-                    wrongAns();
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("\nYou have a total of " + score + " points.");
-                    Console.ResetColor();
-                }
-                Console.WriteLine("\nQUESTION 7: \n\nWhat day is rapare? \n\nA) Thursday \nB) Friday \nC) Saturday");
-                char ans7 = Convert.ToChar(Console.ReadLine().ToUpper());
-                if (ans7 == 'A')
-                {
-                    correctAns();
-                    score++;
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("\nYou have a total of " + score + " points.");
-                    Console.ResetColor();
-                } else
-                {
-                    wrongAns();
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("\nYou have a total of " + score + " points.");
-                    Console.ResetColor();
-                }
-                Console.WriteLine("\nFINAL QUESTION: \n\nWhat day follows rapare? \n\nA) Mane \nB) Paraire \nC) Ratapu");
-                char ans8 = Convert.ToChar(Console.ReadLine().ToUpper());
-                if (ans8 == 'B')
-                {
-                    correctAns();
-                    score++;
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("\nYou have a total of " + score + " points.");
-                    Console.ResetColor();
-                } else
-                {
-                    wrongAns();
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("\nYou have a total of " + score + " points.");
-                    Console.ResetColor();
+                    Console.WriteLine("\nFINAL QUESTION: \n\nWhat day follows rapare? \n\nA) Mane \nB) Paraire \nC) Ratapu");
+                    string ans8 = Console.ReadLine().ToUpper();
+
+
+                    switch (ans8)
+                    {
+                        case "A":
+                            wrongAns();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        case "B":
+                            correctAns();
+                            score++;
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        case "C":
+                            wrongAns();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("\nYou have a total of " + score + " points.");
+                            Console.ResetColor();
+                            break;
+
+                        default:
+                            invalidAns();
+                            continue;
+                    }
+                    break;
                 }
                 if (score <= 3)
                 {
